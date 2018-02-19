@@ -1,7 +1,7 @@
 <template>
   <section class="brands">
       <div class="container">
-          <h2 class="brands__title grid-col-12">top brands</h2>
+          <h2 class="brands__title grid-col-12 heading--line">top brands</h2>
           <div class="brands__selection grid-col-12">
             <ul >
                 <li v-for="brand in brands" v-bind:key="brand.id" class="brands__item">
@@ -44,6 +44,7 @@ export default {
 
 .brands{
     background-color: $top-brands-bg;
+
 }
 
 div.brands__selection.grid-col-12{

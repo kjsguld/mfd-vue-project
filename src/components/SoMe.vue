@@ -1,6 +1,6 @@
 <template>
   <section class="so-me container">
-      <h3 class="so-me__title grid-col-12">get us on</h3>
+      <h3 class="so-me__title heading--line grid-col-12">get us on</h3>
       <div class="so-me__selection grid-col-12">
         <ul>
           <li class="so-me__link"><a href="#"><img src="../assets/img/some/twitter.png" alt="twitter"></a></li>

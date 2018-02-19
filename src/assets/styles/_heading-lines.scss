@@ -1,0 +1,23 @@
+%heading-lines{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    &::before, &::after{
+        display: inline-block;
+        height: 1px;
+        content: " ";
+        text-shadow: none;
+        background-color: $black;
+        width: 100px;
+    }
+    &::before{
+        margin: .8rem 20px .8rem 0;
+    }
+    &::after{
+        margin: .8rem 0 .8rem 20px;
+    }
+}
+
+.heading--line{
+    @extend %heading-lines;
+}
