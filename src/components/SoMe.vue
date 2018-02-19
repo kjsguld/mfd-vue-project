@@ -20,6 +20,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+div.so-me__title{
+  justify-self: center;
+}
 
+div.so-me__selection.grid-col-12{
+  display: flex; 
+  justify-content: space-around;
+  .so-me__link{
+    display: inline;
+  }
+}
 </style>
