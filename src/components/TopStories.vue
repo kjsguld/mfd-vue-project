@@ -8,7 +8,7 @@
         <h3>Get our newsletter</h3>
         <p>Join our maillist to recive special discounts</p>
         <form action="">
-          <input type="text" placeholder="Enter your email">
+          <input class="newsletter__text-input" type="text" placeholder="Enter your email">
           <input class="btn--outline" type="button" value="Subscripe">
         </form>
       </article>
@@ -26,6 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../assets/styles/master';
+
 .top-stories{
     grid-template-areas: "mens mens mens mens newsletter newsletter newsletter newsletter womens womens womens womens";
 
@@ -38,6 +40,14 @@ export default {
     article.womens-lookbook{
         grid-area: womens;
     }
+
+    .newsletter__text-input{
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid $black;
+    }
 }
+
 </style>
 

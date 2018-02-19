@@ -2,15 +2,17 @@
     <section class="products" >
         <ul class="container">
             <li v-for="product in products" v-bind:key="product.id" class="product">
-                <router-link :to="'/product/' + product.id">
+                
                     <div class="">
                         <div class="product__flag product__flag--sale">
                             <span>sale</span>
                         </div>
                         <img class="product__img" src="" alt="">
                         <div class="product__overlay">
-                            <a href="">Quick view</a>
-                            <a href="">Save</a>
+                            <router-link :to="'/product/' + product.id">
+                                Quick view
+                            </router-link>
+                            <a href="#">Save</a>
                         </div>
                     </div>
                     <div class="product__info">
@@ -18,7 +20,7 @@
                         <span class="product__price">{{ product.price }}</span>
                         <button class="product__button btn--blue" type="button" name="button">add to bag</button>
                     </div>
-                </router-link>
+                
             </li>
         </ul>
         
@@ -50,9 +52,15 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../assets/styles/master';
+
 .product{
     grid-column: span 3;
-    color: #fff;
+    color: $white;
+
+    .product__price{
+        color: $black;
+    }
 }
 
 </style>

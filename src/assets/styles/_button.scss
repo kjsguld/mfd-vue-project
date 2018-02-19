@@ -1,7 +1,7 @@
 %btn{
     color: $darkgrey;
     background-color: $lightgrey;
-    padding: 0.4rem;
+    padding: 0.4rem 0.8rem;
     text-transform: uppercase;
     border: none;
     transition: ease-in-out 300ms;
@@ -23,7 +23,7 @@
     }
 }
 
-.btn-outline{
+.btn--outline{
     @extend %btn;
     background-color: $white;
     color: $black;
