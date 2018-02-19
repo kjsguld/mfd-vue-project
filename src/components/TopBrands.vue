@@ -44,6 +44,7 @@ export default {
 
 .brands{
     background-color: $top-brands-bg;
+    padding: 3rem 0 2rem 0;
 
 }
 

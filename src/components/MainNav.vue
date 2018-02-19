@@ -1,5 +1,6 @@
 <template>
-  <header class="header container">
+  <header class="header">
+    <div class="container">
       <div class="header__logo">
         <img src="../assets/img/classyLogo.png" alt="classy logo">
       </div>
@@ -11,25 +12,37 @@
           <li class="nav__item nav__item--burger"><a href="#">burger</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
   name: 'main-nav'
+  
 }
+
 </script>
 
 <style lang="scss" scoped>
-header.header{
-  grid-template-areas: "logo logo . . . . . . nav nav nav nav";
 
-  .header__logo{
-    grid-area: logo;
+@import '../assets/styles/master';
 
-  }
-  .header__nav{
-    grid-area: nav;
+.header{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  margin-top: 2rem;
+
+  .container{
+    grid-template-areas: "logo logo . . . . . . nav nav nav nav";
+
+    .header__logo{
+      grid-area: logo;
+
+    }
+    .header__nav{
+      grid-area: nav;
       ul{
         display: flex;
         flex-direction: row;
@@ -37,23 +50,29 @@ header.header{
         align-content: flex-end;
       }
 
-    .nav__item{
-      padding-left: 0.6rem; 
-    }
-    .nav__item--login::before{
-      content: url('../assets/img/LoginSymbol.png');
-    }
-    .nav__item--items::before{
-      content: url('../assets/img/ShoppingBagSymbol.png');
-    }
-    .nav__item--search::before{
-      content: url('../assets/img/MagGlassSymbol.png');
-    }
-    .nav__item--burger::before{
-      content: url('../assets/img/BurgerMenuIcon.png');
+      .nav__item{
+        &::before{
+          padding-right: 0.6rem; 
+        }
+        a{
+          color: $white;
+          text-decoration: none;
+        }
+      }
+      .nav__item--login::before{
+        content: url('../assets/img/LoginSymbol.png');
+      }
+      .nav__item--items::before{
+        content: url('../assets/img/ShoppingBagSymbol.png');
+      }
+      .nav__item--search::before{
+        content: url('../assets/img/MagGlassSymbol.png');
+      }
+      .nav__item--burger::before{
+        content: url('../assets/img/BurgerMenuIcon.png');
+      }
     }
   }
-}
-
+} 
 </style>
 

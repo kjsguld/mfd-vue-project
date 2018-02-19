@@ -26,7 +26,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+//NOT SCOPED TO AFFECT CAROUSEL
 
 .VueCarousel{
     .VueCarousel-wrapper{
@@ -35,9 +36,9 @@ export default {
         }
     }
 
-    .VueCarousel-dot-container{
+    .VueCarousel-pagination{
         position: absolute;
-        bottom: 1rem;
+        bottom: 1rem; 
     }
     
 }
