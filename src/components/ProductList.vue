@@ -16,7 +16,7 @@
                     <div class="product__info">
                         <h4 class="product__title">{{ product.title }}</h4>
                         <span class="product__price">{{ product.price }}</span>
-                        <button class="product__button" type="button" name="button">add to bag</button>
+                        <button class="product__button btn--blue" type="button" name="button">add to bag</button>
                     </div>
                 </router-link>
             </li>

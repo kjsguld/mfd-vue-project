@@ -1,0 +1,34 @@
+%btn{
+    color: $darkgrey;
+    background-color: $lightgrey;
+    padding: 0.4rem;
+    text-transform: uppercase;
+    border: none;
+    transition: ease-in-out 300ms;
+    &:hover{
+        background-color: darken($color: $lightgrey, $amount: 0.2)
+    }
+}
+
+.btn--grey{
+    @extend %btn;    
+}
+
+.btn--blue{
+    @extend %btn;
+    color: $white;
+    background-color: $lightblue; 
+    &:hover{
+        background-color: darken($color: $lightblue, $amount: 0.2)        
+    }
+}
+
+.btn-outline{
+    @extend %btn;
+    background-color: $white;
+    color: $black;
+    border: $black 2px solid;
+    &:hover{
+        padding: 0.6rem;
+    }
+}

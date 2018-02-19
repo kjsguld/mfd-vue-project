@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios'
+import SoMe from '@/components/SoMe'
 export default {
   name: 'product',
   data: function() {
