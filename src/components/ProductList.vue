@@ -7,7 +7,7 @@
                         <div class="product__flag product__flag--sale">
                             <span>sale</span>
                         </div>
-                        <img class="product__img" src="" alt="">
+                        <img class="product__img" v-bind:src="'/static/img/products/' +  product.img " alt="">
                         <div class="product__overlay">
                             <router-link :to="'/product/' + product.id">
                                 Quick view

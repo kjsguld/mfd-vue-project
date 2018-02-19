@@ -1,7 +1,7 @@
 <template>
   <article class="container">
     <div class="grid-col-6">
-      <img class="product__img" src="" alt="">
+      <img class="product__img" v-bind:src="'/static/img/products/' +  product.img " alt="">
 
     </div>
     <div class="grid-col-6">

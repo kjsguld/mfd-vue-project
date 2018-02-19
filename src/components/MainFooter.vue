@@ -25,10 +25,10 @@
         </ul>
       </div>
       <div class="footer__payment">
-        <img src="" alt="Payment methods">
+        <img src="../assets/img/footer/Creditcards.png" alt="Payment methods">
       </div>
       <div class="footer__logo">
-        <img src="" alt="classy logo">
+        <img src="../assets/img/classyLogo.png" alt="classy logo">
         <q cite="">
           Ecommerce PSD Theme
         </q>
@@ -43,8 +43,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import '../assets/styles/master';
+
 footer.footer{
   grid-template-areas: "help help store store us us payment payment payment payment logo logo";
+  background-color: $footer-grey;
+  color: $footer-text;
 
   .footer__links--help{
     grid-area: help;

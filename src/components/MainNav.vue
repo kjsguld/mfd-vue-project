@@ -1,14 +1,14 @@
 <template>
   <header class="header container">
       <div class="header__logo">
-        <img src="" alt="">
+        <img src="../assets/img/classyLogo.png" alt="classy logo">
       </div>
       <nav class="nav header__nav">
         <ul>
-          <li class="nav__item"><a href="#">login</a></li>
-          <li class="nav__item"><a href="#">items</a></li>
-          <li class="nav__item"><a href="#">search</a></li>
-          <li class="nav__item"><a href="#">burger</a></li>
+          <li class="nav__item nav__item--login"><a href="#">login</a></li>
+          <li class="nav__item nav__item--items"><a href="#">items</a></li>
+          <li class="nav__item nav__item--search"><a href="#">search</a></li>
+          <li class="nav__item nav__item--burger"><a href="#">burger</a></li>
         </ul>
       </nav>
     </header>
@@ -30,13 +30,28 @@ header.header{
   }
   .header__nav{
     grid-area: nav;
-        ul{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-content: flex-end;
-        }
+      ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: flex-end;
+      }
 
+    .nav__item{
+      padding-left: 0.6rem; 
+    }
+    .nav__item--login::before{
+      content: url('../assets/img/LoginSymbol.png');
+    }
+    .nav__item--items::before{
+      content: url('../assets/img/ShoppingBagSymbol.png');
+    }
+    .nav__item--search::before{
+      content: url('../assets/img/MagGlassSymbol.png');
+    }
+    .nav__item--burger::before{
+      content: url('../assets/img/BurgerMenuIcon.png');
+    }
   }
 }
 
