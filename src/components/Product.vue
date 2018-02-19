@@ -1,11 +1,59 @@
 <template>
-  <div>
+  <article class="container">
+    <div class="grid-col-6">
+      <img class="product__img" src="" alt="">
 
-  </div>
+    </div>
+    <div class="grid-col-6">
+      <h1>{{ product.title }}</h1>
+      <span>{{ product.price }}</span>
+      <span>Free Shipping Worldwide</span>
+      <form action="">
+        <select name="color" id="">
+          <option value=""></option>
+        </select>
+        <select name="size" id="">
+          <option value=""></option>
+        </select>
+        <a href="#">Size Guide</a>
+        <input type="button" value="Add to bag">
+        <input type="button" value="Save for later">
+        <a href="#">Share this product</a>
+      </form>
+
+      <p>{{ product.description }}</p>
+    </div>
+  </article>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'product'
+  name: 'product',
+  data: function() {
+      return {
+          product: ''
+      }
+  },
+  created: function(){
+      let id = this.$route.params.id;
+      this.getProductById(id);
+  }, 
+  methods: {
+      getProductById: function(id){
+          axios
+          .get("./static/products.json")
+          .then(response => {
+              this.product = response.data.filter(product => product.id == id)[0]
+          })
+          .catch(error => {
+              console.log(error);
+          })
+      }
+  }
 }
 </script>
+<style lang="sass" scoped>
+
+</style>
+
