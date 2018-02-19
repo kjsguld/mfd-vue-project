@@ -52,6 +52,7 @@ export default {
 
 .product{
     grid-column: span 3;
+    color: #fff;
 }
 
 </style>

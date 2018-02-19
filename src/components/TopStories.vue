@@ -24,6 +24,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
+.top-stories{
+    color: #fff;
+}
 </style>
+

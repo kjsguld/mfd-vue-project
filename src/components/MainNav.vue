@@ -19,3 +19,26 @@ export default {
   name: 'main-nav'
 }
 </script>
+
+<style lang="scss" scoped>
+.header{
+  grid-template-areas: "logo logo . . . . . . nav nav nav nav";
+
+  .header__logo{
+    grid-area: logo;
+
+  }
+  .header__nav{
+    grid-area: nav;
+        ul{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-content: flex-end;
+        }
+
+  }
+}
+
+</style>
+
