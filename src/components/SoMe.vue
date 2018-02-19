@@ -28,8 +28,14 @@ div.so-me__title{
 div.so-me__selection.grid-col-12{
   display: flex; 
   justify-content: space-around;
-  .so-me__link{
-    display: inline;
+  ul{
+    display: flex;
+    align-items: center;
+    .so-me__link img{
+      display: inline;
+      margin: 1rem;
+    }
   }
+  
 }
 </style>

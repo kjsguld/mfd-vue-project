@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "name": "Pull&Bear",
+        "img": "Pull&Bear.png"
+    },
+    {
+        "id": "2",
+        "name": "Michael Kors",
+        "img": "MichaelKors.png"
+    },
+    {
+        "id": "3",
+        "name": "Mango",
+        "img": "Mango.png"
+    },
+    {
+        "id": "4",
+        "name": "Miss Guided",
+        "img": "MissGuided.png"
+    },
+    {
+        "id": "5",
+        "name": "Monki",
+        "img": "Monki.png"
+    }
+]
