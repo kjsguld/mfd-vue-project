@@ -9,12 +9,13 @@
       <span itemprop="price">{{ product.price }}</span>
       <span>Free Shipping Worldwide</span>
       <form action="">
-        <select name="color" id="">
-          <option value=""></option>
-        </select>
-        <select name="size" id="">
-          <option value=""></option>
-        </select>
+        <v-select :options="colors">
+
+        </v-select>
+
+        <v-select :options="sizes">
+
+        </v-select>
         <a href="#">Size Guide</a>
         <input type="button" value="Add to bag">
         <input type="button" value="Save for later">
@@ -29,11 +30,27 @@
 <script>
 import axios from 'axios'
 import SoMe from '@/components/SoMe'
+
+import Vue from 'vue'
+import vSelect from 'vue-select'
+
+Vue.component('v-select', vSelect)
+
 export default {
   name: 'product',
   data: function() {
       return {
-          product: ''
+          product: '',
+          colors: [
+            'red',
+            'green',
+            'blue'
+          ],
+          sizes: [
+            'small',
+            'medium',
+            'large'
+          ]
       }
   },
   created: function(){
