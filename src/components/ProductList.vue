@@ -1,14 +1,14 @@
 <template>
     <section class="products" >
         <ul class="container">
-            <li v-for="product in products" v-bind:key="product.id" class="product">
+            <li itemscope v-for="product in products" v-bind:key="product.id" class="product">
                 
                     <div class="product__wrapper">
                         <div v-if="product.sale == 'true'" class="product__flag product__flag--sale">
                             <span>sale</span>
                         </div>
                         <div class="product__overlay-wrapper">
-                            <img class="product__img" v-bind:src="'/static/img/products/' +  product.img " v-bind:alt=" product.title">
+                            <img itemprop="image" class="product__img" v-bind:src="'/static/img/products/' +  product.img " v-bind:alt=" product.title">
                             <div class="product__overlay">
                                 <router-link :to="'/product/' + product.id">
                                     <img src="../assets/img/product/quick-view.png" alt="quick view">
@@ -22,9 +22,9 @@
                         </div>
                     </div>
                     <div class="product__info">
-                        <h4 class="product__title">{{ product.title }}</h4>
+                        <h4 itemprop="name" class="product__title">{{ product.title }}</h4>
                         <div class="product__info-wrapper">
-                            <span class="product__price">{{ product.price }}</span>
+                            <span itemprop="price" class="product__price">{{ product.price }}</span>
                             <button class="product__button btn--outline" type="button" name="button">add to bag</button>
                         </div>
                     </div>

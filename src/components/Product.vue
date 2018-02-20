@@ -1,12 +1,12 @@
 <template>
-  <article class="container">
+  <article itemscope class="container">
     <div class="grid-col-6">
-      <img class="product__img" v-bind:src="'/static/img/products/' +  product.img " alt="">
+      <img itemprop="image" class="product__img" v-bind:src="'/static/img/products/' +  product.img " alt="">
 
     </div>
     <div class="grid-col-6">
-      <h1>{{ product.title }}</h1>
-      <span>{{ product.price }}</span>
+      <h1 itemprop="name">{{ product.title }}</h1>
+      <span itemprop="price">{{ product.price }}</span>
       <span>Free Shipping Worldwide</span>
       <form action="">
         <select name="color" id="">
@@ -21,7 +21,7 @@
         <a href="#">Share this product</a>
       </form>
 
-      <p>{{ product.description }}</p>
+      <p itemprop="description">{{ product.description }}</p>
     </div>
   </article>
 </template>
