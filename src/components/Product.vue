@@ -1,8 +1,8 @@
 <template>
+<div>
   <article itemscope class="container product-view">
     <div class="grid-col-5 product-img__wrapper">
       <img itemprop="image" class="product-img" v-bind:src="'/static/img/products/' +  product.img " alt="">
-
     </div>
     <div class="grid-col-5 product-info__wrapper">
       <h1 itemprop="name">{{ product.title }}</h1>
@@ -38,6 +38,9 @@
 
     </div>
   </article>
+  <so-me></so-me>
+</div>
+  
 </template>
 
 <script>
@@ -53,7 +56,8 @@ export default {
   components:{
     'v-select': vSelect,
     'vue-tabs': VueTabs,
-    'v-tab': VTab
+    'v-tab': VTab,
+    'so-me': SoMe
   },
   data: function() {
       return {
