@@ -4,7 +4,7 @@
     <top-stories></top-stories>
     <top-brands></top-brands>    
     <offers></offers>
-    <product-list></product-list> 
+    <product-list :limit="4"></product-list> 
     <section class="banner">
       <img class="banner__img" src="/static/img/25-off.jpg" alt="25% off">
     </section>

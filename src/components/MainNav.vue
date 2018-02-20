@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" id="nav-bar">
     <div class="container">
       <div class="header__logo">
         <img src="../assets/img/classyLogo.png" alt="classy logo">
@@ -22,6 +22,15 @@ export default {
   
 }
 
+window.onscroll = function() {
+    var nav = document.getElementById('nav-bar')
+    if ( window.pageYOffset > 550) {
+        nav.classList.add("active")
+    } else {
+        nav.classList.remove("active")
+    }
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -32,7 +41,13 @@ export default {
   position: fixed;
   z-index: 1;
   width: 100%;
-  margin-top: 2rem;
+  padding-top: 2rem;
+  transition: 300ms;
+
+  &.active{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.8rem 0 0.6rem 0;
+  }
 
   .container{
     grid-template-areas: "logo logo . . . . . . nav nav nav nav";

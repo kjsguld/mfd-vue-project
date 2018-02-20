@@ -1,5 +1,5 @@
 <template>
-  <section class="container top-stories">
+  <section class="container top-stories" id="top-stories">
       <article class="mens-lookbook">
         <img src="../assets/img/home/MensLookbook.jpg" alt="Mens lookbook">
         <h3><span>Men's</span><br> lookbook</h3>
