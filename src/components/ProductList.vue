@@ -3,8 +3,8 @@
         <ul class="container">
             <li v-for="product in products" v-bind:key="product.id" class="product">
                 
-                    <div class="">
-                        <div class="product__flag product__flag--sale">
+                    <div class="product__wrapper">
+                        <div v-if="product.sale == 'true'" class="product__flag product__flag--sale">
                             <span>sale</span>
                         </div>
                         <div class="product__overlay-wrapper">
@@ -62,11 +62,6 @@ export default {
             })
             .catch(error => {console.log(error)})
         }
-    },
-    computed: {
-        homeProducts: function(){
-            return this.products.length = 4;
-        }
     }
 }
 </script>
@@ -78,6 +73,19 @@ export default {
 .product{
     grid-column: span 3;
     color: $white;
+
+    .product__wrapper{
+        position: relative;
+    }
+
+    .product__flag.product__flag--sale{
+        padding: 0.5rem;
+        background-color: $lightblue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 
     .product__price{
         color: $black;

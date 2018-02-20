@@ -8,8 +8,8 @@
         <ul>
           <li class="nav__item nav__item--login"><a href="#">login</a></li>
           <li class="nav__item nav__item--items"><a href="#">items</a></li>
-          <li class="nav__item nav__item--search"><a href="#">search</a></li>
-          <li class="nav__item nav__item--burger"><a href="#">burger</a></li>
+          <li class="nav__item nav__item--search"><a href="#"></a></li>
+          <li class="nav__item nav__item--burger"><a href="#"></a></li>
         </ul>
       </nav>
     </div>
@@ -39,7 +39,7 @@ window.onscroll = function() {
 
 .header{
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   padding-top: 2rem;
   transition: 300ms;
@@ -50,7 +50,7 @@ window.onscroll = function() {
   }
 
   .container{
-    grid-template-areas: "logo logo . . . . . . nav nav nav nav";
+    grid-template-areas: "logo logo . . . . . . . nav nav nav";
 
     .header__logo{
       grid-area: logo;
