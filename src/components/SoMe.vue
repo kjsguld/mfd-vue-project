@@ -21,6 +21,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.so-me.container{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 div.so-me__title{
   justify-self: center;
 }
