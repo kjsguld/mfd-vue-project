@@ -51,9 +51,11 @@ export default {
 .footer{
   background-color: $footer-grey;
   color: $footer-text;
-  
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
   .container{
-  grid-template-areas: "help help store store us us payment payment payment payment logo logo";
+    grid-template-areas: "help help store store us us payment payment payment payment logo logo";
   }
 
   ul{
@@ -63,13 +65,18 @@ export default {
 
   h3{
     color: $white;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
   }
 
-  .footer__link a{
-    color: $footer-text;
-    text-decoration: none;
+  .footer__link {
+    padding-bottom: 0.5rem;
+    a{
+        color: $footer-text;
+        text-decoration: none;
+    }
   }
-
+  
   .footer__links--help{
     grid-area: help;
   }
@@ -81,9 +88,11 @@ export default {
   }
   .footer__payment{
     grid-area: payment;
+    margin-top: 2rem;
   }
   .footer__logo{
     grid-area: logo;
+    margin-top: 1rem;
     q{
       font-size: 0.7rem;
     }
