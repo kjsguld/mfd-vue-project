@@ -3,6 +3,9 @@
     background-color: $lightgrey;
     padding: 0.4rem 0.8rem;
     text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
     border: none;
     transition: ease-in-out 300ms;
     &:hover{

@@ -1,0 +1,11 @@
+%input-base{
+    border: 2px $form-border-color solid;
+    border-radius: 0;
+    color: $text-color;
+}
+
+form{
+    .dropdown.v-select>.dropdown-toggle{
+        @extend %input-base;
+    }
+}

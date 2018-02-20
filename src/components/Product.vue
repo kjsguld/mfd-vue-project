@@ -1,36 +1,38 @@
 <template>
-  <article itemscope class="container">
-    <div class="grid-col-6">
-      <img itemprop="image" class="product__img" v-bind:src="'/static/img/products/' +  product.img " alt="">
+  <article itemscope class="container product-view">
+    <div class="grid-col-5 product-img__wrapper">
+      <img itemprop="image" class="product-img" v-bind:src="'/static/img/products/' +  product.img " alt="">
 
     </div>
-    <div class="grid-col-6">
+    <div class="grid-col-5 product-info__wrapper">
       <h1 itemprop="name">{{ product.title }}</h1>
-      <span itemprop="price">{{ product.price }}</span>
-      <span>Free Shipping Worldwide</span>
-      <form action="">
-        <v-select :options="colors">
+      <div class="product-info__price-wrapper">
+        <span class="product-info__price" itemprop="price">{{ product.price }}</span>
+        <span class="product-info__shipping" >Free Shipping Worldwide</span>
+      </div>
+      <form class="product-form" action="">
+        <v-select class="product__select product__select--color" :options="colors">
 
         </v-select>
 
-        <v-select :options="sizes">
+        <v-select class="product__select product__select--size" :options="sizes">
 
         </v-select>
-        <a href="#">Size Guide</a>
-        <input type="button" value="Add to bag">
-        <input type="button" value="Save for later">
-        <a href="#">Share this product</a>
+        <a href="#" class="product__btn--size btn--grey">Size Guide</a>
+        <a class="product__btn--add btn--blue">add to bag</a> 
+        <input type="button" value="Save for later" class="product__btn--save btn--grey">
+        <a href="#" class="product__btn--share">Share this product</a>
       </form>
-
+      
       <vue-tabs>
         <v-tab title="Description">
           <p itemprop="description">{{ product.description }}</p>
         </v-tab>
         <v-tab title="Brand">
-          <p>test</p>
+          <p>Brand info</p>
         </v-tab>
         <v-tab title="Info">
-          <p>test</p>
+          <p>More info of some sort</p>
         </v-tab>
       </vue-tabs>
 
@@ -86,8 +88,146 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 
+@import '../assets/styles/master';
+
+.container.product-view{
+  grid-template-areas: " . prodImg prodImg prodImg prodImg prodImg . prodInfo prodInfo prodInfo prodInfo prodInfo";
+  .product-img__wrapper{
+    grid-area: prodImg;
+  }
+}
+
+.product-info__wrapper{
+  grid-area: prodInfo;
+  h1{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-info__price-wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "price shipping shipping . . ";
+    grid-column-gap: 30px;
+    margin-bottom: 2rem;
+
+    .product-info__price{
+      grid-area: price;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .product-info__shipping{
+      grid-area: shipping;
+      font-size: .78rem;
+      &::before{
+        content: url('../assets/img/product/ShippingLogo.png');
+        padding-right: 0.5rem;
+      }
+    }
+    
+  }
+
+
+}
+
+.vue-tabs{
+
+  .nav-tabs-navigation{
+    .nav-tabs-wrapper{
+      .nav.nav-tabs{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        
+        .tab{
+          padding: 1rem;
+          border-bottom: 0;
+
+          a{
+            color: $text-color;
+            text-decoration: none;
+            font-size: .85rem;
+          }
+
+          &.active{
+            border-top: 1px $newslettergrey solid;
+            border-left: 1px $newslettergrey solid;
+            border-right: 1px $newslettergrey solid;
+            border-bottom: 1px $white solid;
+            margin-bottom: -1px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-content{
+    section.tab-container{
+      margin: 0;
+      padding-top: 1rem;
+      border-top: 1px $newslettergrey solid;
+      color: $form-border-color;
+      font-size: .85rem;
+      line-height: 2em;
+      min-height: 210px;
+    }
+  }
+}
+
+.product-form{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem 30px;
+  grid-template-areas: 
+  "selCol selCol selCol . ."
+  "selSize selSize selSize btnSize btnSize"
+  "btnAdd btnAdd btnAdd . ."
+  "btnSave btnSave btnSave btnShare btnShare";
+  margin-bottom: 3rem;
+
+  .product__select.product__select--color{
+    grid-area: selCol;
+  }
+  .product__select.product__select--size{
+    grid-area: selSize;
+  }
+  .product__btn--size{
+    grid-area: btnSize;
+    font-size: .85rem;
+    text-transform: capitalize;
+
+    &::before{
+      content: url('../assets/img/product/SizeGuideLogo.png');
+      padding-right: .7rem;
+    }
+  }
+  .product__btn--add{
+    grid-area: btnAdd;
+    padding: 1rem;
+    &::before{
+      content: url('../assets/img/product/shopping-bag.png');
+      padding-right: .7rem;
+    }
+  }
+  .product__btn--save{
+    grid-area: btnSave;
+  }
+  .product__btn--share{
+    grid-area: btnShare;
+    text-decoration: none;
+    color: $text-color;
+    font-size: .85rem;
+
+    &::before{
+      content: url('../assets/img/product/ShareProductLogo.png');
+      padding-right: .7rem;
+    }
+  }
+
+}
 
 </style>
 
