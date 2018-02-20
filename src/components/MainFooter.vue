@@ -67,6 +67,7 @@ export default {
     color: $white;
     font-weight: 600;
     padding-bottom: 0.5rem;
+    font-size: 1.2rem;
   }
 
   .footer__link {

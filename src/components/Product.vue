@@ -22,7 +22,18 @@
         <a href="#">Share this product</a>
       </form>
 
-      <p itemprop="description">{{ product.description }}</p>
+      <vue-tabs>
+        <v-tab title="Description">
+          <p itemprop="description">{{ product.description }}</p>
+        </v-tab>
+        <v-tab title="Brand">
+          <p>test</p>
+        </v-tab>
+        <v-tab title="Info">
+          <p>test</p>
+        </v-tab>
+      </vue-tabs>
+
     </div>
   </article>
 </template>
@@ -30,14 +41,18 @@
 <script>
 import axios from 'axios'
 import SoMe from '@/components/SoMe'
-
+// vue component required by select
 import Vue from 'vue'
 import vSelect from 'vue-select'
-
-Vue.component('v-select', vSelect)
+import {VueTabs, VTab} from 'vue-nav-tabs'
 
 export default {
   name: 'product',
+  components:{
+    'v-select': vSelect,
+    'vue-tabs': VueTabs,
+    'v-tab': VTab
+  },
   data: function() {
       return {
           product: '',
@@ -71,7 +86,8 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+
 
 </style>
 

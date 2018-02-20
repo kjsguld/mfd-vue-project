@@ -9,6 +9,7 @@
 <script>
 import MainNav from '@/components/MainNav'
 import MainFooter from '@/components/MainFooter'
+
 export default {
   name: 'App',
   components: {
