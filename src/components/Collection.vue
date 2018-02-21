@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="header-image-collection" src="/static/img/Collection.jpg" alt="New collection">
+    <img class="header-image-collection full-width-img" src="/static/img/Collection.jpg" alt="New collection">
     <product-list></product-list>
     <so-me></so-me>
   </div>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 
 .header-image-collection{
-  width: 100%;
+  
 }
 
 </style>

@@ -2,7 +2,9 @@
   <header class="header" id="nav-bar">
     <div class="container">
       <div class="header__logo">
-        <img src="../assets/img/classyLogo.png" alt="classy logo">
+        <a href="/#/">
+          <img src="../assets/img/classyLogo.png" alt="classy logo">
+        </a>
       </div>
       <nav class="nav header__nav">
         <ul>

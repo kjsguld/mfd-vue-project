@@ -1,5 +1,7 @@
 <template>
 <div>
+  <img class="full-width-img" src="/static/img/50-off-collection.jpg" alt="Big discounts">  
+
   <article itemscope class="container product-view">
     <div class="grid-col-5 product-img__wrapper">
       <img itemprop="image" class="product-img" v-bind:src="'/static/img/products/' +  product.img " alt="">
@@ -38,6 +40,9 @@
 
     </div>
   </article>
+
+  <sharpen-look></sharpen-look>
+  <img class="full-width-img" src="/static/img/big-discounts.jpg" alt="Big discounts">  
   <so-me></so-me>
 </div>
   
@@ -46,6 +51,7 @@
 <script>
 import axios from 'axios'
 import SoMe from '@/components/SoMe'
+import SharpenLook from '@/components/SharpenLook'
 // vue component required by select
 import Vue from 'vue'
 import vSelect from 'vue-select'
@@ -57,7 +63,8 @@ export default {
     'v-select': vSelect,
     'vue-tabs': VueTabs,
     'v-tab': VTab,
-    'so-me': SoMe
+    'so-me': SoMe,
+    'sharpen-look': SharpenLook
   },
   data: function() {
       return {
@@ -92,12 +99,15 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
 
 @import '../assets/styles/master';
 
 .container.product-view{
   grid-template-areas: " . prodImg prodImg prodImg prodImg prodImg . prodInfo prodInfo prodInfo prodInfo prodInfo";
+  margin-top: 5rem;
+  
   .product-img__wrapper{
     grid-area: prodImg;
   }
@@ -218,12 +228,15 @@ export default {
   }
   .product__btn--save{
     grid-area: btnSave;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
   }
   .product__btn--share{
     grid-area: btnShare;
     text-decoration: none;
     color: $text-color;
     font-size: .85rem;
+    margin-top: .6rem;
 
     &::before{
       content: url('../assets/img/product/ShareProductLogo.png');
