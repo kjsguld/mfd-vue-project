@@ -12,6 +12,9 @@
     &:hover{
         background-color: darken($color: $lightgrey, $amount: 0.2)
     }
+    &:focus{
+        outline: none;
+    }
 }
 
 .btn--grey{
@@ -54,5 +57,8 @@
     background-color: $lightblue;
     &:hover{
         background-color: darken($lightblue, 1.2)                
+    }
+    &::placeholder{
+        color: $white;
     }
 }
