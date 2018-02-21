@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="product-view__wrapper">
   <img class="full-width-img" src="/static/img/50-off-collection.jpg" alt="Big discounts">  
 
   <article itemscope class="container product-view">
@@ -103,6 +103,10 @@ export default {
 <style lang="scss">
 
 @import '../assets/styles/master';
+
+.product-view__wrapper{
+  padding-top: 78px;
+}
 
 .container.product-view{
   grid-template-areas: " . prodImg prodImg prodImg prodImg prodImg . prodInfo prodInfo prodInfo prodInfo prodInfo";

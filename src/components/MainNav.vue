@@ -44,9 +44,6 @@ export default {
       isActive: false
     }
   },
-  created () {
-    console.log('created', this);
-  },
   methods: {
     toggleMenu: function (event){
       this.isActive = this.isActive == false ? true : false;
@@ -75,6 +72,11 @@ window.onscroll = function() {
   width: 100%;
   padding-top: 2rem;
   transition: 300ms;
+
+  .page-Product &{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 1rem;
+  }
 
   &.active{
     background-color: rgba(0, 0, 0, 0.5);

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="'page-' + routeName">
     <main-nav></main-nav>
     <router-view/>
     <main-footer></main-footer>
@@ -12,11 +12,25 @@ import MainFooter from '@/components/MainFooter'
 
 export default {
   name: 'App',
+  data () {
+    return{
+      routeName: ''
+    }
+  },
   components: {
     'main-nav': MainNav,
     'main-footer': MainFooter
-  }
+  },
+  created () {
+      this.routeName = this.$route.name    
+  },
+  watch:{
+    $route (to, from){
+      this.routeName = this.$route.name
+    }
+  } 
 }
+
 </script>
 
 <style lang="scss">
