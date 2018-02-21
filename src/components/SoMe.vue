@@ -22,6 +22,8 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../assets/styles/responsive';
+
 .so-me.container{
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -37,6 +39,22 @@ div.so-me__selection.grid-col-12{
   ul{
     display: flex;
     align-items: center;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .so-me__link a img{
+        margin: .6rem;
+      }
+    }
+    @include mobile {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .so-me__link a img{
+        margin: .6rem;
+      }
+    }
+
     .so-me__link img{
       display: inline;
       margin: 1rem;

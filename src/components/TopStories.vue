@@ -35,8 +35,27 @@ export default {
 .top-stories{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 5rem;
     margin-bottom: 5rem;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        article.newsletter{
+            order: 3;
+            margin-top: 0;
+            width: 400px;
+        }
+    }
+    @include mobile {
+        flex-direction: column;
+        article.newsletter{
+            margin-top: 0;
+            width: 100%;
+        }
+    }
 
     article.mens-lookbook, article.womens-lookbook{
         position: relative;
@@ -60,12 +79,15 @@ export default {
         }
     }
 
-    article.newsletter{
-        grid-area: newsletter;
+    .newsletter{
         background-color: #f8f8f8;
+        height: 410px;
         width: 40%;
+        margin-top: 10px;
         text-align: center;
         padding-bottom: 1rem;
+        box-shadow: 0 8px 12px 4px rgba(0,0,0,.10);
+        z-index: 1;
 
         .newsletter__border{
             display: flex;

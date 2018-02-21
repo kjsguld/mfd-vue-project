@@ -81,13 +81,29 @@ window.onscroll = function() {
   &.active{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.8rem 0 0.6rem 0;
+    @include mobile {
+      padding-bottom: 0;
+    }
   }
 
   .container{
     grid-template-areas: "logo logo . . . . . . . nav nav nav";
 
+    @include tablet {
+      grid-template-areas: "logo logo . . . . . . nav nav nav nav";
+    }
+    @include mobile {
+      grid-template-areas: "logo logo logo logo logo . nav nav nav nav nav nav";
+
+    }
+
     .header__logo{
       grid-area: logo;
+      @include mobile{
+        img{
+          width: 100%;
+        }
+      }
 
     }
     .header__nav{
@@ -108,6 +124,19 @@ window.onscroll = function() {
           text-decoration: none;
         }
       }
+      .nav__item--login, .nav__item--items{
+        @include mobile{
+          width: 20px;
+          visibility: hidden;
+          a{
+            width: 20px;
+          }
+          &::before{
+            visibility: visible;
+          }
+        }
+      }
+
       .nav__item--login::before{
         content: url('../assets/img/LoginSymbol.png');
       }
@@ -130,13 +159,20 @@ window.onscroll = function() {
   z-index: 10;
   height: 100%;
   width: 25%;
-  min-width: 200px;
+  min-width: 230px;
   right: -500px;
   background-color: $lightblue;
   transition: 400ms;
   &.active{
     right: 0;
   }
+
+  @include mobile {
+    nav.nav-offcanvas{
+      padding: 5rem 2rem;
+    }
+  }
+
   .nav-offcanvas{
     padding: 5rem;
     text-align: center;

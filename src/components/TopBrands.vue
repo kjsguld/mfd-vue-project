@@ -54,6 +54,14 @@ div.brands__selection.grid-col-12{
     ul{
         display: flex;
         align-items: center;
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
         .brands__item img{
             display: inline;

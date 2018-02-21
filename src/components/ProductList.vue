@@ -88,6 +88,12 @@ export default {
 
 .product{
     grid-column: span 3;
+    @include tablet{
+    grid-column: span 4;        
+    }
+    @include mobile{
+        grid-column: span 12;
+    }
     color: $white;
 
     .product__wrapper{
@@ -112,6 +118,7 @@ export default {
 
         .product__img{
             margin-bottom: -3px;
+            width: 100%;
         }
 
         .product__overlay{

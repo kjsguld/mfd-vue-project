@@ -1,6 +1,7 @@
 // imports
 // base
 @import "variables";
+@import "responsive"; //media query mixin
 @import "mixins";
 @import "reset";
 @import "layout";
@@ -10,6 +11,7 @@
 @import "form";
 // structural partials
 @import "header";
+
 
 
 html{ 

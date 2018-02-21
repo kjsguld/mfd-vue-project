@@ -10,6 +10,9 @@
         text-shadow: none;
         background-color: $black;
         width: 100px;
+        @include mobile {
+            width: 50px;
+        }
     }
     &::before{
         margin: .8rem 20px .8rem 0;

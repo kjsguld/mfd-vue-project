@@ -4,6 +4,13 @@
   grid-gap: 30px;
   max-width: 1170px;
   margin: 0 auto;
+  @include mobile{
+    max-width: calc(100% - 15px);
+    grid-gap: 15px;
+  }
+  @include tablet{
+    max-width: 760px;
+  }
 }
 
 $class-slug: grid-col !default;

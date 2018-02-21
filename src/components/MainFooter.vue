@@ -56,6 +56,42 @@ export default {
 
   .container{
     grid-template-areas: "help help store store us us payment payment payment payment logo logo";
+    @include tablet{
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas: 
+      "help help store store us us"
+      ". payment payment payment payment ."
+      ". . logo logo . .";
+      .footer__payment{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .footer__logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+    @include mobile{
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas: 
+      "help help store store us us"
+      ". payment payment payment payment ."
+      ". . logo logo . .";
+      .footer__payment{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .footer__logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
   }
 
   ul{
