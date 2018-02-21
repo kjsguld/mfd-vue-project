@@ -40,6 +40,13 @@ export default {
     grid-template-columns: 1fr 270px 270px 1fr;
     grid-gap: 30px;
     grid-template-areas: " . email btn . "; 
+    @include mobile {
+      width: calc(100% - 15px);
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "email" 
+      "btn"; 
+    }
     .newsletter-form__email{
       grid-area: email;
       text-transform: none;

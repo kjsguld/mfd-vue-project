@@ -83,6 +83,9 @@ export default {
 .products{
     .products__filters{
         margin-bottom: 2rem;
+        @include mobile {
+            grid-column: span 12;
+        }
     }
 }
 
