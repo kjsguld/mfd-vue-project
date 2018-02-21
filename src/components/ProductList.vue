@@ -2,7 +2,7 @@
     <section class="products" >
         <div v-if="filters == true" class="container">
             <div  class="products__filters grid-col-6">
-                <span>New Collection (x of {{ products.length }})</span>
+                <span>New Collection ({{ products.length }} of {{ products.length }})</span>
                 
             </div>
         </div>
@@ -82,7 +82,6 @@ export default {
 
 .products{
     .products__filters{
-        margin-top: 2rem;
         margin-bottom: 2rem;
     }
 }
