@@ -9,3 +9,27 @@ form{
         @extend %input-base;
     }
 }
+
+form.contact-form{
+    input, textarea{
+        @extend %input-base;   
+        padding: 0.5rem;     
+    }
+
+}
+
+form{
+    .control{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .help.is-danger{
+        position: absolute;
+        bottom: 0;
+        font-size: .75rem;
+        color: $danger;
+    }   
+}
