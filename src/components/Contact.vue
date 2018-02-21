@@ -84,8 +84,16 @@ export default {
 .contact-form__wrapper{
   display: grid;
   max-width: 1170px;
-  margin: 5rem auto;
-
+  margin: 0 auto 5rem auto;
+  @include mobile {
+    width: calc(100% - 15px);
+  }
+  @include tablet {
+    width: calc(100% - 15px);
+    div.contact-form__info{
+      max-width: 700px;
+    }
+  }
 
   .contact-form__info{
       max-width: 970px;
@@ -126,6 +134,26 @@ export default {
     " . l-last-n c-last-n . "
     " . l-msg c-msg . "
     " . . c-sub . ";
+    @include tablet{
+      grid-template-columns: 2fr 2fr 3fr 1fr;
+    }
+    @include mobile{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "l-email"
+      "c-email"
+      "l-first-n"
+      "c-first-n"
+      "l-last-n"
+      "c-last-n"
+      "l-msg"
+      "c-msg"
+      "c-sub";
+      .label-email, .label-first_name, .label-last_name, .label-message{
+        text-align: left !important;
+      }
+
+    }
 
     .label-email{
       grid-area: l-email;
