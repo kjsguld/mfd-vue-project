@@ -2,13 +2,13 @@
     <div class="container--fluid">
         <carousel class="" :perPage="1">
             <slide>
-                <img src="../assets/img/home/header.jpg" alt="">
+                <img src="/static/img/home/header1.jpg" alt="header">
             </slide>
             <slide>
-                Slide 2 Content
+                <img src="/static/img/home/header2.jpg" alt="header">
             </slide>
             <slide>
-                Slide 3 Content
+                <img src="/static/img/home/header3.jpg" alt="header">
             </slide>
         </carousel>    
         <div class="clearfix"></div>
