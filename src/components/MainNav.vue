@@ -52,8 +52,11 @@ export default {
 }
 
 window.onscroll = function() {
-    var nav = document.getElementById('nav-bar')
-    if ( window.pageYOffset > 550) {
+    let vw = window.innerWidth
+    const nav = document.getElementById('nav-bar')
+    let breakpoint = vw >= 768 ? 550 : 200
+
+    if ( window.pageYOffset > breakpoint) {
         nav.classList.add("active")
     } else {
         nav.classList.remove("active")
