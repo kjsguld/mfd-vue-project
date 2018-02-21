@@ -74,15 +74,30 @@ export default {
     "look look"
     "dress-1 design-grey"
     "design-blue dress-2";
-    
     margin: 0 auto;
+    @include mobile{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "look"
+        "dress-1"
+        "design-grey"
+        "dress-2"
+        "design-blue";
+    }    
 
     .product-sharpen__look{
         grid-area: look;
         max-width: 970px;
         margin: 5rem auto;
         text-align: center;
-        
+        @include mobile {
+            width: calc(100% - 15px);
+            h2{
+                font-size: 2rem !important;
+                letter-spacing: 15px !important;
+                line-height: 1.1em;
+            }
+        }
         h2{
             font-size: 2.5rem;
             font-weight: 800;
@@ -133,6 +148,27 @@ export default {
         justify-content: flex-end;
         >div{
             margin-right: 115px;
+        }
+    }
+
+    @include mobile {
+        .product-sharpen__design--blue, .product-sharpen__design--grey{
+            >div{
+                margin-left: auto;
+                margin-right: auto;
+                width: calc(100% - 15px);
+            }
+            .product-sharpen__icon-wrapper{
+                justify-content: space-around;
+                .product-icon__wrapper{
+                    margin-right: 0;
+                }
+            }
+            .btn--outline-blue, .btn--outline-grey{
+                margin: 1rem auto;
+                display: block !important;
+                width: 130px;
+            }
         }
     }
 

@@ -111,6 +111,12 @@ export default {
 .container.product-view{
   grid-template-areas: " . prodImg prodImg prodImg prodImg prodImg . prodInfo prodInfo prodInfo prodInfo prodInfo";
   margin-top: 5rem;
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "prodImg"
+    "prodInfo";
+  }
   
   .product-img__wrapper{
     grid-area: prodImg;
@@ -196,6 +202,7 @@ export default {
 }
 
 .product-form{
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1rem 30px;
@@ -204,7 +211,16 @@ export default {
   "selSize selSize selSize btnSize btnSize"
   "btnAdd btnAdd btnAdd . ."
   "btnSave btnSave btnSave btnShare btnShare";
-  margin-bottom: 3rem;
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "selCol"
+    "selSize"
+    "btnSize"
+    "btnAdd"
+    "btnSave" 
+    "btnShare";
+  }
 
   .product__select.product__select--color{
     grid-area: selCol;
