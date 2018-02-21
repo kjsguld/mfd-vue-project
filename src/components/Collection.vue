@@ -1,7 +1,7 @@
 <template>
   <div>
     <img class="header-image-collection full-width-img" src="/static/img/Collection.jpg" alt="New collection">
-    <product-list></product-list>
+    <product-list :filters="true" ></product-list>
     <so-me></so-me>
   </div>
 </template>

@@ -1,5 +1,11 @@
 <template>
     <section class="products" >
+        <div v-if="filters == true" class="container">
+            <div  class="products__filters grid-col-6">
+                <span>New Collection (x of {{ products.length }})</span>
+                
+            </div>
+        </div>
         <ul class="container">
             <li itemscope v-for="product in products" v-bind:key="product.id" class="product">
                 
@@ -37,9 +43,13 @@
 
 <script>
 import axios from 'axios';
+
 export default {
     name: 'product-list',
-    props: ['limit'],
+    props: ['limit', 'filters'],
+    componenets:{
+
+    },
     data: function(){
         return {
             products: []
@@ -69,6 +79,13 @@ export default {
 <style lang="scss" scoped>
 
 @import '../assets/styles/master';
+
+.products{
+    .products__filters{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
 
 .product{
     grid-column: span 3;
