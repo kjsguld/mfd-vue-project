@@ -1,6 +1,6 @@
 <template>
     <div class="container--fluid">
-        <carousel class="" :perPage="1">
+        <carousel class="" :perPage="1" :navigationEnabled="true">
             <slide>
                 <img src="/static/img/home/header1.jpg" alt="header">
             </slide>
@@ -31,6 +31,7 @@ export default {
 
 .VueCarousel{
     .VueCarousel-wrapper{
+
         .VueCarousel-slide img{
             width: 100%;
         }
@@ -39,6 +40,18 @@ export default {
     .VueCarousel-pagination{
         position: absolute;
         bottom: 1rem; 
+    }
+
+    .VueCarousel-navigation{
+        .VueCarousel-navigation-button{
+            position: absolute;
+            top: 45%;
+            transform: none;
+            content: url('../assets/img/arrow.png');
+            &.VueCarousel-navigation-prev{
+                transform: rotate(180deg);
+            }
+        }
     }
     
 }

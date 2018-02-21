@@ -1,5 +1,6 @@
 <template>
-  <header class="header" id="nav-bar">
+  <div>
+    <header class="header" id="nav-bar">
     <div class="container">
       <div class="header__logo">
         <a href="/#/">
@@ -11,17 +12,46 @@
           <li class="nav__item nav__item--login"><a href="#">login</a></li>
           <li class="nav__item nav__item--items"><a href="#">items</a></li>
           <li class="nav__item nav__item--search"><a href="#"></a></li>
-          <li class="nav__item nav__item--burger"><a href="#"></a></li>
+          <li v-on:click="toggleMenu" class="nav__item nav__item--burger"><a href="#"></a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <div v-bind:class="{ active: isActive }" class="nav-offcanvas__wrapper">
+    <img v-on:click="toggleMenu" class="dismiss-cross" src="../assets/img/cross.png" alt="close">
+    <nav class="nav-offcanvas">
+      <ul>
+        <li>
+          <router-link to="/" v-on:click.native="toggleMenu">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/collection" v-on:click.native="toggleMenu">Collection</router-link>      
+        </li>
+        <li>
+          <router-link to="/contact" v-on:click.native="toggleMenu">Contact</router-link>      
+        </li>
+      </ul>
+    </nav>
+  </div>
+  </div>    
 </template>
 
 <script>
 export default {
-  name: 'main-nav'
-  
+  name: 'main-nav',
+  data () {
+    return {
+      isActive: false
+    }
+  },
+  created () {
+    console.log('created', this);
+  },
+  methods: {
+    toggleMenu: function (event){
+      this.isActive = this.isActive == false ? true : false;
+    }
+  }
 }
 
 window.onscroll = function() {
@@ -91,5 +121,39 @@ window.onscroll = function() {
     }
   }
 } 
+
+.nav-offcanvas__wrapper{
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 25%;
+  min-width: 200px;
+  right: -500px;
+  background-color: $lightblue;
+  transition: 400ms;
+  &.active{
+    right: 0;
+  }
+  .nav-offcanvas{
+    padding: 5rem;
+    text-align: center;
+    li{
+      margin-bottom: 1rem;
+      a{
+        font-size: 1.5rem;
+        color: $white;
+        text-decoration: none;
+        &.router-link-exact-active{
+          border-bottom: 2px solid $white;
+        }
+      }
+    }
+  }
+  .dismiss-cross{
+    width: 1.2rem;
+    margin: 1rem;
+  }
+}
 </style>
 

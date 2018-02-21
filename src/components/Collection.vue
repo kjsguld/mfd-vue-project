@@ -20,8 +20,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.header-image-collection{
-  
-}
-
 </style>

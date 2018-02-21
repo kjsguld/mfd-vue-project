@@ -7,6 +7,7 @@
     text-align: center;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
     transition: ease-in-out 300ms;
     &:hover{
         background-color: darken($color: $lightgrey, $amount: 0.2)
