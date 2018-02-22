@@ -2,22 +2,10 @@
 // base
 @import "variables";
 @import "responsive"; //media query mixin
-@import "mixins";
 @import "reset";
 @import "layout";
 // elements
 @import "button";
 @import "heading-lines";
 @import "form";
-// structural partials
-@import "header";
-
-
-
-html{ 
-    font-family: 'Open Sans', sans-serif;
-}
-
-h3{
-    font-size: 1.5rem;
-}
+@import "fonts";
